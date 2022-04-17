@@ -1,0 +1,47 @@
+body {
+    background-color: #000;
+    color: #fff;
+    font-family: consolas;
+}
+#displayer {
+    width: 100%;
+}
+
+/* Partie home */
+.home {
+    max-width: 768px;
+    margin: auto;
+    margin-top: 4rem;
+}
+
+.home__title {
+    text-align: center;
+    font-size: 3rem;
+    font-family: sans-serif;
+    font-weight: 700;
+}
+
+.home__launcher-button {
+    display: block;
+    margin: auto;
+    width: fit-content;
+    text-align: center;
+    margin-top: 5rem;
+    font-size: 2rem;
+    font-family: sans-serif;
+    cursor: pointer;
+    padding: 1rem 2rem;
+    color: #fff;
+    text-shadow: 2px 2px 2px #000;
+    background-color: rgb(65, 96, 210);
+    border-radius: 1rem;
+    border: 2px solid rgb(0, 0, 130);
+    transition: 0.3s;
+}
+
+.home__launcher-button:hover {
+    transition: 0.3s;
+    transform: scale(1.05);
+}
+
+/* ----------- */

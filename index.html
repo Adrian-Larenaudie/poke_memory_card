@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Poké Memory Game</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/homePage.css">
+    <link rel="stylesheet" href="css/loadingPage.css">
+    <link rel="stylesheet" href="css/gamePage.css">
+    <link rel="stylesheet" href="css/modal.css">
+    <link rel="shortcut icon" href="img/pokeball.png">
+</head>
+
+<body>
+
+    <div id='displayer'>
+        <!-- Injection des balises depuis le JS ici  -->
+    </div>
+
+    <!-- Template de la page d'accueil -->
+    <template class="homeTpl">
+        <div class="home">
+            <h1 class="home__title">PokéMemoryGame</h1>
+            <div class="home__launcher-button" id="launcher">Lancer le jeu</div>
+        </div>  
+    </template>
+
+    <!-- Template de la page de chargement -->
+    <template class="loadingGame">
+        <div class="loading">
+            <div class="loading__bubble">
+                <div class="loading__triangle"></div>
+                <p class="loading__text"></p>
+            </div>
+            <img class="loading__raiAvatar" src="img/Railedadanrineau.png" alt="Avatar du développeur">
+            <p class="loading__title">Chargement</p>
+            <div class="loading__bar">
+                <div class="loading__bar loading__bar--load"></div>
+            </div>
+        </div>
+    </template>
+
+    <!-- Template du plateau de jeu -->
+    <template class="gameTpl">
+        <div class="game-page">
+            <header class="game-page__header">
+                <img class="game-page__pokeball" src="img/pokeball.png" alt="pokéball">
+                <h1 class="game-page__title">PokéMemoryGame</h1>
+                <img class="game-page__pokeball" src="img/pokeball.png" alt="pokéball">
+            </header>
+            <div class="game-page__main">
+                <div id="boardGame" class="game-page__board-game">
+                    <!-- injection d'une grille de pokémon aléatoire -->
+                </div>
+                <div class="game-page__score">
+                    <p class="game-page__current-score">Score actuel: </p>
+                    <p class="game-page__best-score">Meilleure score: </p>
+                </div>
+            </div>    
+        </div>
+    </template>
+
+    <!-- Les boites modales (affichées en fin de partie) -->
+    <!-- TODO ajouter les balises dans les boites modales --> 
+    <div id="success-modal"></div>
+    <div id="tray-again-modal"></div>
+
+    <!-- Les modules js -->
+    <script src="js/app.js"></script>
+    <script src="js/components/loadingGame.js"></script>
+    <script src="js/components/game.js"></script>
+    <script src="js/components/boardGeneration.js"></script>
+    <script src="js/components/utils.js"></script>
+</body>
+</html>
