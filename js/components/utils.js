@@ -22,7 +22,7 @@ const utils = {
     loadCard: (cardNumber) => {
         for (let index = 0; index < cardNumber; index++) {
             document.getElementById('boardGame').innerHTML+= `
-            <div class="game-page__hide-card"><img class="hidden-img" src="img/" alt="pokémon aléatoire"></div>
+            <div class="game-page__hide-card"><img data-matched="false" data-match="false" data-clicked="false" class="hidden-img" src="img/" alt="pokémon aléatoire"></div>
             `;      
         }       
     },
