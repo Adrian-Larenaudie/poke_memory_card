@@ -5,6 +5,8 @@ const game = {
         console.log('Module game chargé');
     },
 
+    score: 0,
+
     /* Méthode d'ajout d'écouteur d'évènements click sur les cartes contenu dans la grille du jeu */
     activeClickOnCards: () => {
         //Ciblage de toutes les cartes contenu dans la grille
@@ -43,8 +45,13 @@ const game = {
                 game.checkMatch();
                 //Toutes les cartes perdent leur status cliquée (le data set clicked repasse à false)
                 game.putAllImgToDataClickedFalse();
-                //On active à nouveau les évènements cliques sur toutes nos cartes
+                //Réactivatrion des évènements cliques sur toutes nos cartes
                 game.activeClickOnCards();
+                //Vérification si la partie est terminée
+                if(scoring.isGameFinished()) {
+                    //Si elle est terminée on passe le score dans la méthode d'affichage des résultats
+                    modal.display(game.score);
+                }
             }, 1000);      
         }     
     },
@@ -86,6 +93,10 @@ const game = {
         //On compare les deux sources des deux images:
         //Si elles sont différentes il n'y a pas de match:
         if(clickedImg[0].src != clickedImg[1].src) {
+            //On décrémente le score de 1 points
+            game.score--;
+             //On affiche un message à l'utilisateur
+             scoring.pointAnimation(false);
             //On parcourt à nouveau toutes les balies images
             pokemonsImg.forEach((pokemonImg) => {
                 //Si le data set matched qui correspond aux images ayant précédemment matchés avec d'autres est différent de true
@@ -101,6 +112,10 @@ const game = {
             })
         //Sinon si les src sont identique il y a un match:
         } else if(clickedImg[0].src === clickedImg[1].src) {
+            //On incrémente le score de 2 points
+            game.score += 2 ;
+            //On affiche un message à l'utilisateur
+            scoring.pointAnimation(true);
             //On parcourt toutes les balises images
             pokemonsImg.forEach((pokemonImg) => {
                 //Si lorsque l'on arrive sur une balise qui a l'attribut match à true

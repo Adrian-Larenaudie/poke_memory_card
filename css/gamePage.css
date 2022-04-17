@@ -52,12 +52,13 @@
 
 .game-page__score {
     position: absolute;
-    right: 10rem;
+    right: 5rem;
     top: 2rem;
     padding: 2rem;
     border-radius: 1rem;
     border: #fff 3px solid;
-}
+    width: 300px;
+;}
 
 .game-page__current-score {
 
@@ -78,3 +79,25 @@
     left: 0;
 }
 /* ---------- */
+
+/* Animation sur les points */
+.gameTpl__point {
+    right: 1rem;
+    font-size: 2rem;
+    font-weight: 600;
+    text-shadow: 2px 2px 2px #000;
+    transition: .3s;
+    opacity: 0;
+}
+
+.success {
+    color: green;
+    opacity: 1;
+}
+
+.fail {
+    color: red;
+    opacity: 1;
+}
+
+/* ------------------------ */
