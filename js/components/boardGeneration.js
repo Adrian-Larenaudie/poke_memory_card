@@ -8,7 +8,7 @@ const boardGeneration = {
     /* Méthodep pour afficher le jeu */
     displayGame: () => {
         //Avant d'afficher la page du jeu, le contenu du displayer est vidé de toutes ses balises
-        app.displayerCleaner();
+        utils.displayerCleaner();
         //Injection du bon template
         //Ciblage de la balise que va recevoir l'affichage principale
         const displayer = document.querySelector('#displayer');
@@ -28,8 +28,8 @@ const boardGeneration = {
 
     /* Méthode d'ajout aléatoire des images de pokemon dans chaque case de la grille du jeu */
     randomPokemonDisplaying: () => {
-        //Tableau avec les images du jeu
-        const pokemons = ['Abo.png', 'Aspicot.png', 'Bulbizarre.png', 'Carabaffe.png', 'Carapuce.png', 'Salamèche.png'];
+        //Récupération d'un tableau de pokémon 
+        const pokemons = utils.getPokemonArray(6);
         //Tableau des éléments seléctionnés une 1ere fois
         let arrayofFirstPickedUp = [];
         //Tableau des éléments seléctionnés une 2eme fois
@@ -47,7 +47,7 @@ const boardGeneration = {
             }
             //Si on arrive ici c'est que l'entier aléatoire n'est pas déjà présent dans le tableau 'arrayofSecondPickedUp'
             //Alors on donne à la balise <img> courante une source récupérée grâce à la valeur de randIndex
-            element.src = 'img/' + pokemons[randIndex];
+            element.src = 'img/' + pokemons[randIndex] + '.png';
             //Si l'entier est déjà présent dans la tableau 'arrayofFirstPickedUp':
             if(arrayofFirstPickedUp.includes(randIndex)) {
                 //On le stock dans le tableau 'arrayofSecondPickedUp'

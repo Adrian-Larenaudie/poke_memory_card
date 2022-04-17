@@ -36,7 +36,21 @@ const utils = {
 
     /* Méthode de récupération d'un tableau d'une longueur paramétrable à partir d'un tableau principal  */
     getPokemonArray(number) {
-        const mainPokemonArray = []
+        const mainPokemonArray = ['Abo', 'Arbok', 'Aspicot', 'Bulbizarre', 'Carabaffe', 'Carapuce', 'Chenipan', 'Chrysacier', 'Coconfort', 'Dardargnan', 'Dracaufeu', 'Florizarre', 'Herbizarre', 'Papilusion', 'Piafabec', 'Pikachu', 'Raichu', 'Rapasdepic', 'Railedadanrineau', 'Rattata', 'Rattatac', 'Reptincel', 'Roucool', 'Roucoups', 'Roucarnage', 'Salamèche', 'Tortank']
+        let randomArrayOfPokemon = [];
+        for (let i = 0; i < number; i++) {
+            let randIndex = utils.getRandomInteger(0, mainPokemonArray.length-1);
+            let rightIndex = utils.getRightIndex(mainPokemonArray, randomArrayOfPokemon, randIndex);
+            randomArrayOfPokemon.push(mainPokemonArray[rightIndex])
+        }
         return randomArrayOfPokemon;
     },
+
+    getRightIndex: (mainArray, randomArray, randIndex) => {
+        while(randomArray.includes(mainArray[randIndex])) {
+            randIndex = utils.getRandomInteger(0, mainArray.length-1);
+            utils.getRightIndex(mainArray, randomArray, randIndex);
+        } 
+        return randIndex;  
+    }           
 }

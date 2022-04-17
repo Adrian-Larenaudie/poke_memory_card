@@ -13,6 +13,8 @@ const app = {
         
         //Appel de la méthode pour afficher la parge d'accueil
         app.home();
+
+        utils.getPokemonArray(6);
     },
 
     /* Méthode pour afficher la home et permettre de lancé la page de chargement du jeu */
@@ -31,7 +33,7 @@ const app = {
         launchButton.addEventListener('click', (event) => {
             //Lors du click:
             //1.Le displayer est nettoyé (vidé de tous ses éléments)
-            app.displayerCleaner();
+            utils.displayerCleaner();
             //2.la méthode pour lancer l'affichage du chargement du jeu est jouée
             //loadingGame.running(); //! commenté pour facilité le développement
             boardGeneration.displayGame();
