@@ -22,7 +22,11 @@
     <!-- Template de la page d'accueil -->
     <template class="homeTpl">
         <div class="home">
-            <h1 class="home__title">PokéMemoryGame</h1>
+            <div class="home__header">
+                <img class="home__img" src="img/pokeball.png" alt="pokéball">
+                <h1 class="home__title">PokéMemoryGame</h1>
+                <img class="home__img" src="img/pokeball.png" alt="pokéball">
+            </div>
             <div class="home__launcher-button" id="launcher">Lancer le jeu</div>
         </div>  
     </template>
@@ -55,9 +59,9 @@
                     <!-- injection d'une grille de pokémon aléatoire -->
                 </div>
                 <div class="game-page__score">
-                    <p class="game-page__current-score">Score actuel: <span></span></p>
-                    <p class="game-page__last-game-score">Score de la dernière partie: <span></span></p>
-                    <p class="game-page__best-score">Meilleure score: <span></span></p>
+                    <p class="game-page__current-score">Score actuel: <span>0</span></p>
+                    <p class="game-page__last-game-score">Score de la dernière partie: <span>0</span></p>
+                    <p class="game-page__best-score">Meilleure score: <span>0</span></p>
                     <p class="gameTpl__point">.</p>
                 </div>
             </div>    
@@ -65,9 +69,17 @@
     </template>
 
     <!-- Les boites modales (affichées en fin de partie) -->
-    <!-- TODO ajouter les balises dans les boites modales --> 
-    <div id="success-modal"></div>
-    <div id="tray-again-modal"></div>
+    <div id="modal" class="modal">
+        <div class="modal__content">
+            <h1 class="modal__title">Bravo</h1>
+            <p class="modal__score">Tu as gagné avec un score de 10 points</p>
+            <div class="modal__buttons">
+                <div class="modal__replay-button">Rejouer</div>
+                <div class="modal__home-button">Accueil</div>
+            </div>
+            
+        </div>
+    </div>
 
     <!-- Les modules js -->
     <script src="js/app.js"></script>

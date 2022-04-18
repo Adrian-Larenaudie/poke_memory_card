@@ -69,7 +69,7 @@ const score = {
     },
 
     /* Affiche le score de la dernière partie à l'utilisateur */
-    displayLasGameScore: () => {
+    displayLastGameScore: () => {
         const scoreElement = document.querySelector('.game-page__last-game-score span')
         scoreElement.textContent += score.currentScore;
     },

@@ -44,10 +44,12 @@ const game = {
             game.checkMatch();
             //Toutes les cartes perdent leur status cliquées (le data set clicked repasse à false)
             game.putAllImgToDataClickedFalse();
-            //Vérification si la partie est terminée
+            //Vérification: si la partie est terminée
             if(score.isGameFinished()) {
-                //Si elle est terminée on passe le score dans la méthode d'affichage des résultats
-                score.displayLasGameScore();
+                //On affiche la modal de fin de partie
+                modal.displayModal();
+                //on passe le score dans la méthode d'affichage des résultats
+                score.displayLastGameScore();
             }
             //Au bout de 1.5 secondes
             setTimeout(() => {

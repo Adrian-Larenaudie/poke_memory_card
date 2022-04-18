@@ -21,6 +21,8 @@ const app = {
     home: () => {
         //Ciblage de l'élément parent qui va recevoir l'affichage principale
         const displayer = document.querySelector('#displayer');
+        //On commence par nettoyer le conenu du displayer
+        utils.displayerCleaner();
         //Ciblage du template relatif à l'affichage de l'accueil
         const homeTemplate = document.querySelector('.homeTpl');
         //Le tpl est cloné puis stocké dans une variable
