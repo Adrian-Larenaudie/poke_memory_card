@@ -14,7 +14,7 @@ const app = {
         //Appel de la méthode pour afficher la parge d'accueil
         app.home();
         //! A retirer une fois le développement terminer
-        boardGeneration.init();
+        //boardGeneration.init();
     },
 
     /* Méthode pour afficher la home et permettre de lancé la page de chargement du jeu */
@@ -37,8 +37,8 @@ const app = {
             //1.Le displayer est nettoyé (vidé de tous ses éléments)
             utils.displayerCleaner();
             //2.la méthode pour lancer l'affichage du chargement du jeu est jouée
-           // loadingGame.running(); //! commenté pour facilité le développement
-            boardGeneration.displayGame();
+            loadingGame.running(); //! commenté pour facilité le développement
+            //boardGeneration.displayGame();
         })
     },
 }
