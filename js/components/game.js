@@ -5,15 +5,14 @@ const game = {
         console.log('Module game chargé');
     },
 
-    score: 0,
-
     /* Méthode d'ajout d'écouteur d'évènements click sur les cartes contenu dans la grille du jeu */
     activeClickOnCards: () => {
         //Ciblage de toutes les cartes contenu dans la grille
         const cards = document.querySelectorAll('.game-page__hide-card');
         //Pour chaque carte un écouteur d'évènement click est adossé
         cards.forEach((card) => {
-            card.addEventListener('click', game.handleActiveClickOnCards)
+            card.addEventListener('click', game.handleActiveClickOnCards);
+            card.style.cursor = 'pointer';
         })
     },
 
@@ -36,23 +35,25 @@ const game = {
         if(numberOfClickedImg == 2) {
             //On retire l'évènement clique sur toutes les cartes
             cards.forEach((card) => {
-                card.removeEventListener('click', game.handleActiveClickOnCards)
+                card.removeEventListener('click', game.handleActiveClickOnCards);
+                card.style.cursor = 'default';
             })
-            //Au bout de 1 seconde
+            //On joue plusieurs méthodes:
+
+            //Vérification si les deux cartes cliquées sont identiques
+            game.checkMatch();
+            //Toutes les cartes perdent leur status cliquées (le data set clicked repasse à false)
+            game.putAllImgToDataClickedFalse();
+            //Vérification si la partie est terminée
+            if(score.isGameFinished()) {
+                //Si elle est terminée on passe le score dans la méthode d'affichage des résultats
+                score.displayLasGameScore();
+            }
+            //Au bout de 1.5 secondes
             setTimeout(() => {
-                //On joue plusieurs méthodes:
-                //Vérification si les deux cartes cliquées sont identiques
-                game.checkMatch();
-                //Toutes les cartes perdent leur status cliquée (le data set clicked repasse à false)
-                game.putAllImgToDataClickedFalse();
-                //Réactivatrion des évènements cliques sur toutes nos cartes
-                game.activeClickOnCards();
-                //Vérification si la partie est terminée
-                if(scoring.isGameFinished()) {
-                    //Si elle est terminée on passe le score dans la méthode d'affichage des résultats
-                    modal.display(game.score);
-                }
-            }, 1000);      
+                //Réactivation des évènements cliques sur toutes nos cartes
+                game.activeClickOnCards();           
+            }, 1500);      
         }     
     },
 
@@ -94,9 +95,9 @@ const game = {
         //Si elles sont différentes il n'y a pas de match:
         if(clickedImg[0].src != clickedImg[1].src) {
             //On décrémente le score de 1 points
-            game.score--;
-             //On affiche un message à l'utilisateur
-             scoring.pointAnimation(false);
+            score.currentScore--;
+            //On affiche un message à l'utilisateur
+            score.pointAnimation(false);
             //On parcourt à nouveau toutes les balies images
             pokemonsImg.forEach((pokemonImg) => {
                 //Si le data set matched qui correspond aux images ayant précédemment matchés avec d'autres est différent de true
@@ -104,18 +105,21 @@ const game = {
                     //On:
                     //Passe le match potentielle à false
                     pokemonImg.dataset.match = 'false';
-                    //Cache l'image
-                    pokemonImg.style.visibility = 'hidden';
-                    //Passe le balise parente en visible
-                    pokemonImg.closest('div').style.visibility = 'visible'; 
+                    //Change l'affichage au bout de 2 secondes
+                    setTimeout(() => {
+                        //Cache l'image
+                        pokemonImg.style.visibility = 'hidden';
+                        //Passe le balise parente en visible
+                        pokemonImg.closest('div').style.visibility = 'visible';    
+                    }, 1500);    
                 }
             })
         //Sinon si les src sont identique il y a un match:
         } else if(clickedImg[0].src === clickedImg[1].src) {
             //On incrémente le score de 2 points
-            game.score += 2 ;
+            score.currentScore += 2 ;
             //On affiche un message à l'utilisateur
-            scoring.pointAnimation(true);
+            score.pointAnimation(true);
             //On parcourt toutes les balises images
             pokemonsImg.forEach((pokemonImg) => {
                 //Si lorsque l'on arrive sur une balise qui a l'attribut match à true
@@ -127,6 +131,8 @@ const game = {
                 }
             })
         }
+        //On affiche le score à l'utilisateur
+        score.displayCurrentScore();
     },
 
     /* Méthode pour définir un data set clicked à false pour toutes les images */

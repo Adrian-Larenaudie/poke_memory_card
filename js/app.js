@@ -10,7 +10,7 @@ const app = {
         game.init();
         utils.init();
         modal.init();
-        scoring.init();
+        score.init();
         //Appel de la méthode pour afficher la parge d'accueil
         app.home();
         //! A retirer une fois le développement terminer

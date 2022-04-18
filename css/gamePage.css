@@ -80,7 +80,7 @@
 }
 /* ---------- */
 
-/* Animation sur les points */
+/* Animations sur le système d'ajout de point */
 .gameTpl__point {
     right: 1rem;
     font-size: 2rem;
@@ -91,13 +91,43 @@
 }
 
 .success {
-    color: green;
+    color: #6ffe61;
     opacity: 1;
 }
 
 .fail {
-    color: red;
+    color: #ce1a1a;
     opacity: 1;
+}
+
+@keyframes hiddenAnimation {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;  
+    }
+}
+
+.hiddenAnimation {
+    animation-name: hiddenAnimation;
+    animation-duration: .5s;
+    animation-iteration-count: 1;
+}
+
+@keyframes visibleAnimation {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;  
+    }
+}
+
+.visibleAnimation {
+    animation-name: visibleAnimation;
+    animation-duration: .5s;
+    animation-iteration-count: 1;
 }
 
 /* ------------------------ */
