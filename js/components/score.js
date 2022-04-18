@@ -63,7 +63,7 @@ const score = {
         }, 1000);
     },
 
-    /* Méthode pour afficher le score actuel à l'utilisateur */
+    /* Affiche le score actuel à l'utilisateur */
     displayCurrentScore: () => {
         const currentScore = document.querySelector('.game-page__current-score span');
         currentScore.textContent = score.currentScore;
@@ -72,6 +72,12 @@ const score = {
     /* Affiche le score de la dernière partie à l'utilisateur */
     displayLastGameScore: () => {
         const scoreElement = document.querySelector('.game-page__last-game-score span')
-        scoreElement.textContent += score.currentScore;
+        scoreElement.textContent = score.lastGameScore;
+    },
+
+    /* Affiche le meilleure score à l'utilisateur */
+    displayBestScore: () => {
+        const scoreElement = document.querySelector('.game-page__best-score span')
+        scoreElement.textContent = score.bestScore;
     },
 }

@@ -29,8 +29,8 @@
 
 .game-page__board-game {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    width: 40%;
+    grid-template-columns: repeat(4, 1fr);
+    width: 50%;
 }
 
 .game-page__board-game div {
@@ -52,7 +52,7 @@
 
 .game-page__score {
     position: absolute;
-    right: 5rem;
+    right: 1rem;
     top: 2rem;
     padding: 2rem;
     border-radius: 1rem;

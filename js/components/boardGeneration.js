@@ -22,6 +22,9 @@ const boardGeneration = {
         utils.loadCard(12);
         //Distribution des images aléatoirement
         boardGeneration.randomPokemonDisplaying();
+        //Affichage des scores
+        score.displayBestScore();
+        score.displayLastGameScore();
         //Activation des évènements sur les cartes du jeu
         game.activeClickOnCards();
     },

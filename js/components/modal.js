@@ -24,13 +24,14 @@ const modal = {
                 } else if(button.textContent === 'Accueil') {
                     app.home();                 
                 }
+                modal.style.display = 'none';
                 if(score.currentScore > score.bestScore) {
                     document.querySelector('.game-page__best-score span').textContent = score.currentScore;
                 }
                 document.querySelector('.game-page__last-game-score span').textContent = score.currentScore;
                 document.querySelector('.game-page__current-score span').textContent = 0;
                 score.currentScore = 0;
-                modal.style.display = 'none';
+               
             })
         }) 
     },
