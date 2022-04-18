@@ -24,6 +24,7 @@ const score = {
         return boolean;
     },
 
+    // TODO LOCAL STORAGE DES SCORES: lastGameScore & bestScore
     /* Méthode pour gérer l'affichage de l'attribution des points à l'utilisateurs */
     pointAnimation: (boolean) => {
         //Ciblage de l'élément qui va subir les modifications
