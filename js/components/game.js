@@ -46,10 +46,22 @@ const game = {
             game.putAllImgToDataClickedFalse();
             //Vérification: si la partie est terminée
             if(score.isGameFinished()) {
-                //On affiche la modal de fin de partie
-                modal.displayModal();
-                //on passe le score dans la méthode d'affichage des résultats
-                score.displayLastGameScore();
+                setTimeout(() => {
+                    //On affiche la modal de fin de partie
+                    modal.displayModal();
+                    //On actualise les scores
+                    if(score.currentScore >  localStorage.getItem('bestScore')) {
+                        localStorage.setItem('bestScore', score.currentScore);
+                    }
+                    localStorage.setItem('lastGameScore', score.currentScore);
+            
+                    score.currentScore = 0;
+
+                    score.displayCurrentScore();
+                    score.displayLastGameScore();
+                    score.displayBestScore();
+
+                }, 500);               
             }
             //Au bout de 1.5 secondes
             setTimeout(() => {

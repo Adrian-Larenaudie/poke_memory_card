@@ -35,17 +35,6 @@ const modal = {
         } else if(button.textContent === 'Accueil') {
             app.home();                 
         }
-        modalBox.style.display = 'none';
-        if(score.currentScore > score.bestScore) {
-            document.querySelector('.game-page__best-score span').textContent = score.currentScore;
-            score.bestScore = score.currentScore;
-        }
-        score.lastGameScore = score.currentScore;
-        document.querySelector('.game-page__last-game-score span').textContent = score.currentScore;
-        document.querySelector('.game-page__current-score span').textContent = 0;
-        score.currentScore = 0;
-        console.log(score.currentScore);
-        console.log(score.lastGameScore);
-        console.log(score.bestScore);
+        modalBox.style.display = 'none';       
     },
 }

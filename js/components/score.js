@@ -62,23 +62,25 @@ const score = {
         }, 1000);
     },
 
+    // TODO LOCAL STORAGE DES SCORES: lastGameScore & bestScore
     /* Affiche le score actuel à l'utilisateur */
     displayCurrentScore: () => {
-        const currentScore = document.querySelector('.game-page__current-score span');
-        currentScore.textContent = score.currentScore;
+        const currentScoreContainer = document.querySelector('.game-page__current-score span');
+        currentScoreContainer.textContent = score.currentScore;
+        localStorage.setItem('currentScore', score.currentScore);
     },
 
     /* Affiche le score de la dernière partie à l'utilisateur */
     displayLastGameScore: () => {
-        const scoreElement = document.querySelector('.game-page__last-game-score span')
-        scoreElement.textContent = score.currentScore;
+        const lastGameScoreContainer = document.querySelector('.game-page__last-game-score span')
+        lastGameScoreContainer.textContent = localStorage.getItem('lastGameScore');
     },
 
     /* Affiche le meilleure score à l'utilisateur */
     displayBestScore: () => {
-        const scoreElement = document.querySelector('.game-page__best-score span')
-        scoreElement.textContent = score.bestScore;
+        const bestScoreContainer = document.querySelector('.game-page__best-score span')
+        bestScoreContainer.textContent = localStorage.getItem('bestScore');
     },
 
-    // TODO LOCAL STORAGE DES SCORES: lastGameScore & bestScore
+   
 }

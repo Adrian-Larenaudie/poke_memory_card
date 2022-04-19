@@ -25,6 +25,7 @@ const boardGeneration = {
         //Affichage des scores
         score.displayBestScore();
         score.displayLastGameScore();
+        score.displayCurrentScore();
         //Activation des évènements sur les cartes du jeu
         game.activeClickOnCards();
     },
