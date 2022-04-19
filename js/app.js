@@ -8,11 +8,9 @@ const app = {
         utils.init();
         modal.init();
         score.init();
+        boardGeneration.init();
         //Appel de la méthode pour afficher la parge d'accueil
-        app.home();
-        //! A retirer une fois le développement terminer
-        //boardGeneration.init();
-        modal.displayModal();
+        app.home(); 
     },
 
     /* Méthode pour afficher la home et permettre de lancé la page de chargement du jeu */
