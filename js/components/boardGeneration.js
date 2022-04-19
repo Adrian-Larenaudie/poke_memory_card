@@ -2,7 +2,7 @@ const boardGeneration = {
      /* Initialiasation du module */
      init: () => {
         //Log en console pour controle du bon chargement du module
-        console.log('Module boardGeneration chargé');
+        //console.log('Module boardGeneration chargé');
     },
 
     /* Méthodep pour afficher le jeu */

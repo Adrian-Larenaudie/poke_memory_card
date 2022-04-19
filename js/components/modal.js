@@ -1,6 +1,6 @@
 const modal = {
     init: () => {
-        console.log('Module modal chargé');
+        //console.log('Module modal chargé');
         modal.initEventOnModal();
     },
 

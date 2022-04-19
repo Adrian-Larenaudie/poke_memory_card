@@ -2,7 +2,7 @@ const game = {
       /* Initialiasation du module */
       init: () => {
         //Log en console pour controle du bon chargement du module
-        console.log('Module game chargé');
+        //console.log('Module game chargé');
     },
 
     /* Méthode d'ajout d'écouteur d'évènements click sur les cartes contenu dans la grille du jeu */

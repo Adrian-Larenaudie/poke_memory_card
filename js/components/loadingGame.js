@@ -2,7 +2,7 @@ const loadingGame = {
     /* Initialisation du module */
     init: () => {
         //Log en console pour controle du bon chargement du module
-        console.log('Module loadingGame chargé');
+        //console.log('Module loadingGame chargé');
     },
 
     /* Méthode pour afficher la page de chargement du jeu */
@@ -64,7 +64,7 @@ const loadingGame = {
         //Les chaines de caractères qui seront affichées les unes après les autres dans la bulle
         const firstSentence = 'Salut, je suis Adrian, j\'ai développé ce petit jeu.';
         const secondSentence = 'Amuse toi et exerce ta mémoire avec le PokéMemoryGame';
-        const thirdSentence = 'C\'est parti!';
+        const thirdSentence = 'Z\'est parti, let\'s go!';
         //Appel de la méthode pour lancer l'affichage des phrases: prend les chaines de caractères + l'élément de la bulle en paramètre
         loadingGame.textDisplayer(firstSentence, secondSentence, thirdSentence, bubbleText);
     },

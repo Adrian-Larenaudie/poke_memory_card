@@ -1,6 +1,6 @@
 const score = {
     init: () => {
-        console.log('Module scoring chargé');
+        //console.log('Module scoring chargé');
     },
 
     /* Propriété relative au score de la partie en cours */
@@ -62,7 +62,6 @@ const score = {
         }, 1000);
     },
 
-    // TODO LOCAL STORAGE DES SCORES: lastGameScore & bestScore
     /* Affiche le score actuel à l'utilisateur */
     displayCurrentScore: () => {
         const currentScoreContainer = document.querySelector('.game-page__current-score span');
@@ -80,7 +79,5 @@ const score = {
     displayBestScore: () => {
         const bestScoreContainer = document.querySelector('.game-page__best-score span')
         bestScoreContainer.textContent = localStorage.getItem('bestScore');
-    },
-
-   
+    }, 
 }

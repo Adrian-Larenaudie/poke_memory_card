@@ -2,7 +2,7 @@ const utils = {
     /* Initialiasation du module */
     init: () => {
         //Log en console pour controle du bon chargement du module
-        console.log('Module utils chargé');
+        //console.log('Module utils chargé');
     },
 
     /* Méthode pour retirer toutes les balises dans l'élément displayer */
@@ -64,5 +64,5 @@ const utils = {
         } 
         //On retourne un index qui n'a pas encore été utilisé 
         return randIndex;  
-    }           
+    },           
 }

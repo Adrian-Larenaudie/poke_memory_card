@@ -33,8 +33,9 @@ const app = {
             //1.Le displayer est nettoyé (vidé de tous ses éléments)
             utils.displayerCleaner();
             //2.la méthode pour lancer l'affichage du chargement du jeu est jouée
-            //loadingGame.running(); //! commenté pour facilité le développement
-            boardGeneration.displayGame();
+            loadingGame.running();
+            //! ici pour skip le chargement
+            //boardGeneration.displayGame();
         })
     },
 }
