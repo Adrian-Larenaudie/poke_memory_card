@@ -2,9 +2,6 @@
 const app = {
     //Méthode fléchée de l'objet app
     init: () => {
-        //Log en console pour controle du bon chargement du module
-        console.log('Module app chargé');
-
         //Initialisation des différents composants (modules)
         loadingGame.init();
         game.init();
@@ -15,6 +12,7 @@ const app = {
         app.home();
         //! A retirer une fois le développement terminer
         //boardGeneration.init();
+        modal.displayModal();
     },
 
     /* Méthode pour afficher la home et permettre de lancé la page de chargement du jeu */

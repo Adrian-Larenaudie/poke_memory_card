@@ -24,7 +24,6 @@ const score = {
         return boolean;
     },
 
-    // TODO LOCAL STORAGE DES SCORES: lastGameScore & bestScore
     /* Méthode pour gérer l'affichage de l'attribution des points à l'utilisateurs */
     pointAnimation: (boolean) => {
         //Ciblage de l'élément qui va subir les modifications
@@ -72,7 +71,7 @@ const score = {
     /* Affiche le score de la dernière partie à l'utilisateur */
     displayLastGameScore: () => {
         const scoreElement = document.querySelector('.game-page__last-game-score span')
-        scoreElement.textContent = score.lastGameScore;
+        scoreElement.textContent = score.currentScore;
     },
 
     /* Affiche le meilleure score à l'utilisateur */
@@ -80,4 +79,6 @@ const score = {
         const scoreElement = document.querySelector('.game-page__best-score span')
         scoreElement.textContent = score.bestScore;
     },
+
+    // TODO LOCAL STORAGE DES SCORES: lastGameScore & bestScore
 }
