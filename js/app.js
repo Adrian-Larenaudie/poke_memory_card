@@ -25,6 +25,8 @@ const app = {
         let home = homeTemplate.content.cloneNode(true);
         //Ajout du clone comme 1er enfant du displayer
         displayer.prepend(home);
+        //Ajout des évènements click dur les options
+        app.handleOptionMenu();
         //Ciblage du bouton de lancement du jeu
         const launchButton = displayer.querySelector('.home__launcher-button');
         //Ajout d'un écouteur d'évènement click sur ce bouton
@@ -33,11 +35,34 @@ const app = {
             //1.Le displayer est nettoyé (vidé de tous ses éléments)
             utils.displayerCleaner();
             //2.la méthode pour lancer l'affichage du chargement du jeu est jouée
-            loadingGame.running();
+            //loadingGame.running();
             //! ici pour skip le chargement
-            //boardGeneration.displayGame();
+            boardGeneration.displayGame();
         })
     },
+
+    /* Méthode handle pour gérer le click sur les options et actualiser le choix de l'utilisateur */
+    handleOptionMenu: () => {
+        const options = document.querySelectorAll('.option-menu__button');
+        options.forEach((option) => {
+            option.addEventListener('click', (event) => {
+                app.unselectOtherOptions(options);
+                option.style.backgroundColor = "#49b675";
+                boardGeneration.cardsNumber = option.getAttribute('value');
+                console.log(    boardGeneration.cardsNumber);
+            })
+            
+        })
+    },
+
+    /* Méthode qui permet de remettre la couleur par défault des options du jeu */
+    unselectOtherOptions: (options) => {
+        options.forEach((option)=> {
+            option.style.backgroundColor = 'rgb(65, 96, 210)';
+        })
+    },
+
+
 }
 
 // On ajoute un écouteur d'évènement pour pouvoir lancer l'application

@@ -37,7 +37,7 @@ const utils = {
     /* Méthode de récupération d'un tableau d'une longueur paramétrable à partir d'un tableau principal  */
     getPokemonArray(number) {
         //Le tableau principal de tous nos pokémons
-        const mainPokemonArray = ['Abo', 'Arbok', 'Aspicot', 'Bulbizarre', 'Carabaffe', 'Carapuce', 'Chenipan', 'Chrysacier', 'Coconfort', 'Dardargnan', 'Dracaufeu', 'Florizarre', 'Herbizarre', 'Papilusion', 'Piafabec', 'Pikachu', 'Raichu', 'Rapasdepic', 'Railedadanrineau', 'Rattata', 'Rattatac', 'Reptincel', 'Roucool', 'Roucoups', 'Roucarnage', 'Salamèche', 'Tortank']
+        const mainPokemonArray = ['Abo', 'Arbok', 'Aspicot', 'Bulbizarre', 'Carabaffe', 'Carapuce', 'Chenipan', 'Chrysacier', 'Coconfort', 'Dardargnan', 'Dracaufeu', 'Florizarre', 'Herbizarre', 'Papilusion', 'Piafabec', 'Pikachu', 'Raichu', 'Rapasdepic', 'Railedadanrineau', 'Rattata', 'Rattatac', 'Reptincel', 'Roucool', 'Roucoups', 'Roucarnage', 'Salamèche', 'Tortank', 'Artikodin', 'Canarticho', 'Ectoplasma', 'Electhor', 'Fantominus', 'Magneton', 'Magneti', 'Mew', 'Nidoqueen', 'NidoranF', 'Nidorina', 'Onix', 'Ronflex', 'Sablaireau', 'Sablette', 'Tauros'];
         //Tableau vide qui va recevoir 'number' pokémons aléatoires contenu dans le tableau principal
         let randomArrayOfPokemon = [];
         //On boucle autant de fois que 'number'

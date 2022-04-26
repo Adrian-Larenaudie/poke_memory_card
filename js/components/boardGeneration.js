@@ -5,6 +5,9 @@ const boardGeneration = {
         //console.log('Module boardGeneration chargé');
     },
 
+    /* Propriété qui définit le nombre de cartes du jeu, modifié en fonction du choix de l'utilisateur */
+    cardsNumber: undefined,
+
     /* Méthodep pour afficher le jeu */
     displayGame: () => {
         //Avant d'afficher la page du jeu, le contenu du displayer est vidé de toutes ses balises
@@ -19,7 +22,7 @@ const boardGeneration = {
         //Ajout du clone comme 1er enfant du displayer
         displayer.prepend(loading);
         //Génération de la grille de jeu 12 pour le nombre de cases (cartes) souhaitées
-        utils.loadCard(12);
+        utils.loadCard(boardGeneration.cardsNumber);
         //Distribution des images aléatoirement
         boardGeneration.randomPokemonDisplaying();
         //Affichage des scores
@@ -28,12 +31,14 @@ const boardGeneration = {
         score.displayCurrentScore();
         //Activation des évènements sur les cartes du jeu
         game.activeClickOnCards();
+        //Affiche la bonne taille des carte en fonction de leur nombre
+        boardGeneration.setCardsSize();
     },
 
     /* Méthode d'ajout aléatoire des images de pokemon dans chaque case de la grille du jeu */
     randomPokemonDisplaying: () => {
         //Récupération d'un tableau de pokémon 
-        const pokemons = utils.getPokemonArray(6);
+        const pokemons = utils.getPokemonArray(boardGeneration.cardsNumber / 2);
         //Tableau des éléments seléctionnés une 1ere fois
         let arrayofFirstPickedUp = [];
         //Tableau des éléments seléctionnés une 2eme fois
@@ -51,7 +56,7 @@ const boardGeneration = {
             }
             //Si on arrive ici c'est que l'entier aléatoire n'est pas déjà présent dans le tableau 'arrayofSecondPickedUp'
             //Alors on donne à la balise <img> courante une source récupérée grâce à la valeur de randIndex
-            element.src = 'img/' + pokemons[randIndex] + '.png';
+            element.src = 'img/pokemon/' + pokemons[randIndex] + '.png';
             //Si l'entier est déjà présent dans la tableau 'arrayofFirstPickedUp':
             if(arrayofFirstPickedUp.includes(randIndex)) {
                 //On le stock dans le tableau 'arrayofSecondPickedUp'
@@ -63,4 +68,20 @@ const boardGeneration = {
         })
     },
 
+    /* Méthode pour adapter la taille des cartes en fonction de leurs nombre */
+    setCardsSize: () => {
+        let pixelSize;
+        if(boardGeneration.cardsNumber === '24') {
+            pixelSize = 100;
+        }
+        if(boardGeneration.cardsNumber === '48') {
+            pixelSize = 70;
+        }
+        const cards = document.querySelectorAll('.game-page__hide-card');
+        cards.forEach((card) => {
+            card.style.height = pixelSize + 'px';
+            card.style.width = pixelSize + 'px';
+            card.style.margin = '.5rem';
+        })
+    }
 }

@@ -1,19 +1,23 @@
-### Simple project to make me practice vanilla JavaScript.
+### To make me practice vanilla JavaScript, I realize this memory game application
 
-**Memory card game with pokemons pictures.**  
+**Quick description**
+- different levels of difficulty relating to the number of cards in a game
+- animated loading page
+- random choice of image from a collection of images and random distribution of cards
+- simple scoring system by points
+- a modal is displayed at the end of the game to restart a game or to return to the homepage
 
-**Principle of the game**  
-If two last card turned over are the same they are visible otherwise if not hidden again.    
-The goal is to succeed in turning over all the cards.  
+**Area of improvment**
+- improve design
+- make it responsive
+- add the possibility to return to the menu during the game 
 
-I wanted to make it harder to do by adding some features:  
-- like the real game every card are shuffled before you start playing, so I randomly took 6 pics from a pokemon image database and then I've put on the grid each selected cards randomly
-- A simple scoring system, 2 points if cards are match or -1 points if they don't
-- I just added for fun a game loading page simulation with little animations
+<h1 align="center">Screenshots</h1>
+<p align="center"> 
+    <img src="img/screenshot/screenshot2.png" />
+    <img src="img/screenshot/screenshot1.png" />
+</p>
 
-In future I wanted to add:
-- several possibilities of larger grids with more cards
-- more animations
-- improve visual rendering    
+ 
 
 

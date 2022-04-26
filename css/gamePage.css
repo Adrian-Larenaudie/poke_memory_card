@@ -28,8 +28,8 @@
 }
 
 .game-page__board-game {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    display: flex;
+    flex-wrap: wrap;
     width: 50%;
 }
 
@@ -51,7 +51,7 @@
 }
 
 .game-page__score {
-    position: absolute;
+    position: fixed;
     right: 1rem;
     top: 2rem;
     padding: 2rem;
@@ -71,8 +71,8 @@
 .hidden-img {
     visibility: hidden;
     border-radius: 5px;
-    height: 150px;
-    width: 150px;
+    height: 100%;
+    width: 100%;
     background-color: #fff;
     position: absolute;
     top: 0;

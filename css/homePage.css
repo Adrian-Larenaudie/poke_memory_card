@@ -32,7 +32,22 @@ body {
     font-weight: 700;
 }
 
-.home__launcher-button {
+.option-menu {
+    display: flex;
+    position: relative;
+    justify-content: center;
+}
+
+.option-menu__title {
+    position: absolute;
+    margin: 2rem;
+}
+
+.option-menu .option-menu__button {
+    font-size: 1.4rem;
+}
+
+.home__launcher-button, .option-menu__button {
     display: block;
     margin: auto;
     width: fit-content;
@@ -50,7 +65,7 @@ body {
     transition: 0.2s;
 }
 
-.home__launcher-button:hover {
+.home__launcher-button:hover, .option-menu__button:hover {
     transition: 0.2s;
     transform: scale(1.02);
 }
