@@ -1,7 +1,7 @@
 /* Partie boite modal */
 
 .modal {
-    color: #000;
+    color: #fff;
     display: none;
     position: fixed; 
     z-index: 1;
@@ -17,11 +17,11 @@
 .modal__content {
     display: flex;
     flex-direction: column;
-    background-color: #fefefe;
+    background-color: #32373c;
     margin: 15% auto;
     padding: 2rem;
-    border: 3px solid rgb(65, 96, 210);
-    border-radius: 5px;
+    border: 2px solid rgb(74, 74, 74);
+    border-radius: .3rem;
     width: 30%;
 }
 
@@ -30,6 +30,7 @@
     font-size: 2rem;
     font-family: sans-serif;
     font-weight: 700;
+    text-shadow: 2px 2px 2px #000;
 }
 
 .modal__score {
@@ -38,11 +39,11 @@
     font-size: 1.1rem;
     font-family: consolas;
     font-weight: 600;
+    text-shadow: 2px 2px 2px #000;
 }
 
 .modal__buttons {
     display: flex;
-
 }
 
 .modal__replay-button, .modal__home-button  {
@@ -56,10 +57,11 @@
     padding: 1rem 2rem;
     color: #fff;
     text-shadow: 2px 2px 2px #000;
-    background-color: rgb(65, 96, 210);
+    background-color: rgb(102, 105, 117);
     border-radius: 1rem;
-    border: 3px solid rgb(0, 0, 130);
+    border: 1px solid rgba(0, 0, 0, 0.438);
     transition: .2s;
+    box-shadow: 2px 2px 10px #000;
 }
 
 .modal__replay-button:hover, .modal__home-button:hover {
