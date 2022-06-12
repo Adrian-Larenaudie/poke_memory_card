@@ -49,7 +49,6 @@ const app = {
                 app.unselectOtherOptions(options);
                 option.style.backgroundColor = "#49b675";
                 boardGeneration.cardsNumber = option.getAttribute('value');
-                console.log(    boardGeneration.cardsNumber);
             })
             
         })

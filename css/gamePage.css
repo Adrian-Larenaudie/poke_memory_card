@@ -193,4 +193,11 @@
     .game-page__title {
         font-size: 1.5rem;
     }
+    .game-page__hide-card {
+        width: 65px !important;
+        height: 65px !important;
+    }
+    .game-page__main {
+        width: 150%;
+    }
 }

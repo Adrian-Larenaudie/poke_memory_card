@@ -9,9 +9,8 @@ const game = {
     },
 
     handleClickOnRestartButton: (event) => {
-        console.log('click');
         localStorage.setItem('currentScore', '0');
-        app.home();
+        location.reload();
     },
 
     /* Méthode d'ajout d'écouteur d'évènements click sur les cartes contenu dans la grille du jeu */
