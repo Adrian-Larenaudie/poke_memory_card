@@ -1,6 +1,5 @@
 const modal = {
     init: () => {
-        //console.log('Module modal chargé');
         modal.initEventOnModal();
     },
 
@@ -29,7 +28,6 @@ const modal = {
     handleDisplayModal: (event) => {
         const modalBox = document.querySelector('.modal');
         const button = event.target
-        console.log(event.target);
         if(button.textContent === 'Rejouer') {
             boardGeneration.displayGame();
         } else if(button.textContent === 'Accueil') {

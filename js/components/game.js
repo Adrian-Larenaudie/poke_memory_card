@@ -1,8 +1,17 @@
 const game = {
       /* Initialiasation du module */
-      init: () => {
-        //Log en console pour controle du bon chargement du module
-        //console.log('Module game chargé');
+      init: () => {  
+    },
+
+    /* Méthode pour initier un click event sur le bouton relancer une partie  */
+    activeClickOnRestartButton: () => {
+        document.querySelector('.game__home-button div').addEventListener('click', game.handleClickOnRestartButton);
+    },
+
+    handleClickOnRestartButton: (event) => {
+        console.log('click');
+        localStorage.setItem('currentScore', '0');
+        app.home();
     },
 
     /* Méthode d'ajout d'écouteur d'évènements click sur les cartes contenu dans la grille du jeu */
@@ -13,7 +22,7 @@ const game = {
         cards.forEach((card) => {
             card.addEventListener('click', game.handleActiveClickOnCards);
             card.style.cursor = 'pointer';
-        })
+        })       
     },
 
     /* Handler sur le click des cards de la grille du jeu */

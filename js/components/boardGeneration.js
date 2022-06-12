@@ -1,8 +1,6 @@
 const boardGeneration = {
      /* Initialiasation du module */
      init: () => {
-        //Log en console pour controle du bon chargement du module
-        //console.log('Module boardGeneration chargé');
     },
 
     /* Propriété qui définit le nombre de cartes du jeu, modifié en fonction du choix de l'utilisateur */
@@ -33,6 +31,7 @@ const boardGeneration = {
         game.activeClickOnCards();
         //Affiche la bonne taille des carte en fonction de leur nombre
         boardGeneration.setCardsSize();
+        game.activeClickOnRestartButton();
     },
 
     /* Méthode d'ajout aléatoire des images de pokemon dans chaque case de la grille du jeu */
@@ -68,14 +67,20 @@ const boardGeneration = {
         })
     },
 
-    /* Méthode pour adapter la taille des cartes en fonction de leurs nombre */
+    /* Méthode pour adapter la taille des cartes et du parent en fonction de leurs nombre */
     setCardsSize: () => {
         let pixelSize;
+        let boradGameMaxWidth;
+        if(boardGeneration.cardsNumber === '12') {
+            pixelSize = 150;
+            boradGameMaxWidth = 850;
+        }
         if(boardGeneration.cardsNumber === '24') {
             pixelSize = 100;
+            boradGameMaxWidth = 1080;
         }
         if(boardGeneration.cardsNumber === '48') {
-            pixelSize = 70;
+            pixelSize = 90;
         }
         const cards = document.querySelectorAll('.game-page__hide-card');
         cards.forEach((card) => {
@@ -83,5 +88,6 @@ const boardGeneration = {
             card.style.width = pixelSize + 'px';
             card.style.margin = '.5rem';
         })
+        document.querySelector('.game-page__main').style.maxWidth = boradGameMaxWidth + 'px';
     }
 }
